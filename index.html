@@ -100,9 +100,51 @@
     </section>
 
     <!-- Sección Contacto -->
-
+    <section class="contact" id="contacto">
+        <div class="container">
+            <h2 class="section-title-contact">Contacto</h2>
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" class="form-control" placeholder="Nombre completo" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                </div>
+                <div class="form-group">
+                    <textarea class="form-control" placeholder="Mensaje" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+            </form>
+        </div>
+    </section>
     
     <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>Selling Cars Quickly © 2025 CertiWeb</p>
+        </div>
+    </footer>
 
+    <div id="registro" style="display: none;">
+    </div>
+
+    <script>
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                
+                if (targetId === '#registro') {
+                    window.location.href = 'https://ejemplo.com/registro';
+                    return;
+                }
+                
+                document.querySelector(targetId).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
 </body>
 </html>
