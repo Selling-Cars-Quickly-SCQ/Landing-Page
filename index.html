@@ -4,6 +4,329 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CertiWeb - Car Certification</title>
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            color: #000000;
+            background-color: #D8CCB8;
+        }
+
+        .language-switch {
+            position: fixed;
+            top: 30px;
+            right: 30px;
+            z-index: 100;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        
+        .hero {
+            position: relative;
+            height: 100vh;
+            background-color: #002d18;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        .hero-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            padding: 20px;
+        }
+
+        .logo {
+            max-width: 200px;
+            margin: 0 auto 30px;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #fbb901;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 40px;
+            line-height: 1.6;
+        }
+
+        .btn-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            border-radius: 30px;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-primary {
+            background-color: #fbb901;
+            color: #002d18;
+        }
+
+        .btn-secondary {
+            background-color: #f8ecd6;
+            color: #002d18;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        
+        .why-us {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: #002d18;
+        }
+
+        .section-title-contact{
+            text-align: center;
+            font-size: 2rem;
+            margin-bottom: 50px;
+            color: #ffffff;
+            
+        }
+        .features {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .feature {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+        }
+
+        .feature-icon {
+            color: #fbb901;
+            font-size: 1.2rem;
+            min-width: 24px;
+        }
+
+       
+        .about-us {
+            padding: 80px 0;
+            background-color: #f8ecd6;
+            text-align: center;
+        }
+
+        .about-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .about-icon {
+            width: 120px;
+            height: 120px;
+            margin: 0 auto 30px;
+        }
+
+        
+        .reviews {
+            padding: 80px 0;
+            background-color: #C3CCC7;
+            color: #ffffff;
+        }
+
+        .reviews .section-title {
+            color: #000000;
+        }
+
+        .testimonials {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .testimonial {
+            background-color: #123325;
+            border-radius: 10px;
+            padding: 20px;
+            position: relative;
+        }
+
+        .testimonial-content {
+            margin-left: 60px;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #c3ccc7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #002d18;
+        }
+
+        .testimonial h4 {
+            margin-bottom: 10px;
+            color: #fbb901;
+        }
+
+        .testimonial p {
+            line-height: 1.6;
+        }
+
+       
+        .contact {
+            padding: 80px 0;
+            background-color: #002d18;
+            color: #ffffff;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f8ecd6;
+            color: #002d18;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .grid-container {
+          display: grid; 
+          grid-template-columns: 1fr 1fr;
+          gap: 20px; 
+          align-items: start; 
+        }
+
+        .container {
+          max-width: 1200px; 
+          margin: 0 auto; 
+          padding: 20px; 
+        }
+
+        
+        .section-title {
+          font-size: 1.8em; 
+          margin-bottom: 15px; 
+          color: #123325; 
+        }
+
+        .grid-column p {
+          color: #555; 
+          line-height: 1.6; 
+        }
+
+        
+        .feature {
+          display: flex; 
+          align-items: flex-start; 
+          margin-bottom: 10px; 
+        }
+
+        .feature-icon {
+          margin-right: 10px;
+          font-weight: bold; 
+          min-width: 20px; 
+          text-align: center;
+        }
+
+       
+        .about-content {
+          display: flex;
+          flex-direction: column; 
+          align-items: center;
+          text-align: center; 
+        }
+
+        .about-icon img {
+          max-width: 100px; 
+          height: auto;
+          margin-bottom: 15px; 
+        }
+
+        
+        @media (max-width: 768px) {
+          .grid-container {
+            grid-template-columns: 1fr; 
+            gap: 30px; 
+          }
+        }
+        
+    
+
+
+        /* Footer */
+        footer {
+            background-color: #002d18;
+            color: #ffffff;
+            text-align: center;
+            padding: 20px 0;
+            font-size: 0.9rem;
+            border-top: 1px solid #123325;
+        }
+    </style>
 </head>
 <body>
     <!-- Sección Hero -->
@@ -12,13 +335,33 @@
             <source src="/Videos/carro.mp4" type="video/mp4">
             Tu navegador no soporta videos HTML5.
         </video>
+        <div class="language-switch">
+            <button id="lang-switch-btn" style="
+                background-color: rgba(255, 255, 255, 0.2); 
+                color: white; 
+                border: 1px solid white; 
+                border-radius: 20px; 
+                padding: 8px 15px; 
+                cursor: pointer; 
+                font-weight: bold;
+                backdrop-filter: blur(5px);
+                transition: all 0.3s ease;
+                display: flex;
+                align-items: center;
+                gap: 5px;
+            ">
+                
+                <span>English</span>
+            </button>
+        </div>
         <div class="hero-content">
+            
             <img src="/Images/raw-min.png" alt="CertiWeb Logo" class="logo">
-            <h1>Tu camino certificado hacia una venta de auto segura</h1>
-            <p>Deshágase del valor real de su vehículo con una certificación profesional. Venda más rápido, venda de forma más rentable.</p>
+            <h1 data-lang-es="Tu camino certificado hacia una venta de auto segura" data-lang-en="Your certified path to a safe car sale">Tu camino certificado hacia una venta de auto segura</h1>
+            <p data-lang-es="Deshágase del valor real de su vehículo con una certificación profesional. Venda más rápido, venda de forma más rentable." data-lang-en="Unlock the real value of your vehicle with a professional certification. Sell faster, sell more profitably.">Deshágase del valor real de su vehículo con una certificación profesional. Venda más rápido, venda de forma más rentable.</p>
             <div class="btn-container">
-                <a href="#registro" class="btn btn-primary">Regístrate</a>
-                <a href="#contacto" class="btn btn-secondary">Contacto</a>
+                <a href="#registro" class="btn btn-primary" data-lang-es="Regístrate" data-lang-en="Sign Up">Regístrate</a>
+                <a href="#contacto" class="btn btn-secondary" data-lang-es="Contacto" data-lang-en="Contact">Contacto</a>
             </div>
         </div>
     </section>
@@ -27,42 +370,42 @@
         <div class="container">
             <div class="grid-container">
                 <div class="grid-column" id="por-que">
-                    <h2 class="section-title">¿Por qué elegir Certiweb?</h2>
+                    <h2 class="section-title" data-lang-es="¿Por qué elegir Certiweb?" data-lang-en="Why choose Certiweb?">¿Por qué elegir Certiweb?</h2>
                     <div class="features">
                         <div class="feature">
                             <div class="feature-icon" style="color: red;">X</div>
                             <div>
-                                <p>No somos intermediarios: No compramos ni vendemos autos, solo certificamos su estado.</p>
+                                <p data-lang-es="No somos intermediarios: No compramos ni vendemos autos, solo certificamos su estado." data-lang-en="We are not intermediaries: We do not buy or sell cars, we only certify their condition.">No somos intermediarios: No compramos ni vendemos autos, solo certificamos su estado.</p>
                             </div>
                         </div>
                         <div class="feature">
-                             <div class="feature-icon">🔍</div>
+                            <div class="feature-icon">🔍</div>
                             <div>
-                                 <p>Inspección exhaustiva: Revisamos más de 100 puntos en motor, carrocería y documentación.</p>
+                                <p>Inspección exhaustiva: Revisamos más de 100 puntos en motor, carrocería y documentación.</p>
                             </div>
                         </div>
                         <div class="feature">
-                             <div class="feature-icon">📄</div>
+                            <div class="feature-icon">📄</div>
                             <div>
-                                <p>Informe detallado: Incluye fotos, diagnóstico mecánico y un precio sugerido basado en el mercado.</p>
+                                <p data-lang-es="Informe detallado: Incluye fotos, diagnóstico mecánico y un precio sugerido basado en el mercado." data-lang-en="Detailed report: Includes photos, mechanical diagnosis, and a suggested market-based price.">Informe detallado: Incluye fotos, diagnóstico mecánico y un precio sugerido basado en el mercado.</p>
                             </div>
                         </div>
                         <div class="feature">
-                             <div class="feature-icon" style="color: green;">✓</div>
+                            <div class="feature-icon" style="color: green;">✓</div>
                             <div>
-                                <p>Aumenta la confianza del comprador: Con nuestro sello, el auto tiene más credibilidad y se vende más rápido.</p>
+                                <p data-lang-es="Aumenta la confianza del comprador: Con nuestro sello, el auto tiene más credibilidad y se vende más rápido." data-lang-en="Increases buyer confidence: With our seal, the car has more credibility and sells faster.">Aumenta la confianza del comprador: Con nuestro sello, el auto tiene más credibilidad y se vende más rápido.</p>
                             </div>
                         </div>
                     </div>
                 </div>
     
                 <div class="grid-column" id="sobre-nosotros">
-                    <h2 class="section-title">Sobre nosotros</h2>
+                    <h2 class="section-title" data-lang-es="Sobre nosotros" data-lang-en="About Us">Sobre nosotros</h2>
                     <div class="about-content">
                         <div class="about-icon">
                             <img class="scq-img" src="/Images/raw2-min.png" alt="Icono Selling Cars Quickly">
                         </div>
-                        <p>Somos un servicio técnico especializado en <br>certificar la calidad de autos usados antes de su venta</p>
+                        <p data-lang-es="Somos un servicio técnico especializado en <br>certificar la calidad de autos usados antes de su venta" data-lang-en="We are a technical service specialized in <br>certifying the quality of used cars before their sale">Somos un servicio técnico especializado en <br>certificar la calidad de autos usados antes de su venta</p>
                     </div>
                 </div>
             </div>
@@ -72,27 +415,27 @@
     <!-- Sección Reseñas -->
     <section class="reviews" id="resenas">
         <div class="container">
-            <h2 class="section-title">Reseñas</h2>
+            <h2 class="section-title" data-lang-es="Reseñas" data-lang-en="Reviews">Reseñas</h2>
             <div class="testimonials">
                 <div class="testimonial">
                     <div class="testimonial-avatar">A</div>
                     <div class="testimonial-content">
-                        <h4>Alberto Rodríguez</h4>
-                        <p>"Gracias a la certificación de CertiWeb pude vender mi auto en menos de una semana. El comprador valoró mucho el informe detallado y la transparencia."</p>
+                        <h4 data-lang-es="Alberto Rodríguez" data-lang-en="Alberto Rodriguez">Alberto Rodríguez</h4>
+                        <p data-lang-es='"Gracias a la certificación de CertiWeb pude vender mi auto en menos de una semana. El comprador valoró mucho el informe detallado y la transparencia."' data-lang-en='"Thanks to CertiWebs certification, I was able to sell my car in less than a week. The buyer really valued the detailed report and transparency."'>"Gracias a la certificación de CertiWeb pude vender mi auto en menos de una semana. El comprador valoró mucho el informe detallado y la transparencia."</p>
                     </div>
                 </div>
                 <div class="testimonial">
                     <div class="testimonial-avatar">M</div>
                     <div class="testimonial-content">
-                        <h4>María González</h4>
-                        <p>"Excelente servicio. Los técnicos fueron muy profesionales y detallistas. El informe me ayudó a negociar un mejor precio para mi vehículo."</p>
+                        <h4 data-lang-es="María González" data-lang-en="Maria Gonzalez">María González</h4>
+                        <p data-lang-es='"Excelente servicio. Los técnicos fueron muy profesionales y detallistas. El informe me ayudó a negociar un mejor precio para mi vehículo."' data-lang-en='"Excellent service. The technicians were very professional and detail-oriented. The report helped me negotiate a better price for my vehicle."'>"Excelente servicio. Los técnicos fueron muy profesionales y detallistas. El informe me ayudó a negociar un mejor precio para mi vehículo."</p>
                     </div>
                 </div>
                 <div class="testimonial">
                     <div class="testimonial-avatar">J</div>
                     <div class="testimonial-content">
-                        <h4>Juan Pérez</h4>
-                        <p>"Recomiendo CertiWeb a todos los que quieran vender su auto con confianza. El proceso fue rápido y el certificado me dio una ventaja competitiva frente a otros vendedores."</p>
+                        <h4 data-lang-es="Juan Pérez" data-lang-en="Juan Perez">Juan Pérez</h4>
+                        <p data-lang-es='"Recomiendo CertiWeb a todos los que quieran vender su auto con confianza. El proceso fue rápido y el certificado me dio una ventaja competitiva frente a otros vendedores."' data-lang-en='"I recommend CertiWeb to anyone who wants to sell their car with confidence. The process was fast, and the certificate gave me a competitive advantage over other sellers."'>"Recomiendo CertiWeb a todos los que quieran vender su auto con confianza. El proceso fue rápido y el certificado me dio una ventaja competitiva frente a otros vendedores."</p>
                     </div>
                 </div>
             </div>
@@ -102,18 +445,18 @@
     <!-- Sección Contacto -->
     <section class="contact" id="contacto">
         <div class="container">
-            <h2 class="section-title-contact">Contacto</h2>
+            <h2 class="section-title-contact" data-lang-es="Contacto" data-lang-en="Contact">Contacto</h2>
             <form class="contact-form">
                 <div class="form-group">
-                    <input type="text" class="form-control" placeholder="Nombre completo" required>
+                    <input type="text" class="form-control" placeholder="Nombre completo" data-lang-placeholder-es="Nombre completo" data-lang-placeholder-en="Full Name" required>
                 </div>
                 <div class="form-group">
-                    <input type="email" class="form-control" placeholder="Correo electrónico" required>
+                    <input type="email" class="form-control" placeholder="Correo electrónico" data-lang-placeholder-es="Correo electrónico" data-lang-placeholder-en="Email Address" required>
                 </div>
                 <div class="form-group">
-                    <textarea class="form-control" placeholder="Mensaje" required></textarea>
+                    <textarea class="form-control" placeholder="Mensaje" data-lang-placeholder-es="Mensaje" data-lang-placeholder-en="Message" required></textarea>
                 </div>
-                <button type="submit" class="btn btn-primary">Enviar mensaje</button>
+                <button type="submit" class="btn btn-primary" data-lang-es="Enviar mensaje" data-lang-en="Send Message">Enviar mensaje</button>
             </form>
         </div>
     </section>
@@ -121,7 +464,7 @@
     <!-- Footer -->
     <footer>
         <div class="container">
-            <p>Selling Cars Quickly © 2025 CertiWeb</p>
+            <p data-lang-es="Selling Cars Quickly © 2025 CertiWeb" data-lang-en="Selling Cars Quickly © 2025 CertiWeb">Selling Cars Quickly © 2025 CertiWeb</p>
         </div>
     </footer>
 
@@ -144,6 +487,46 @@
                     behavior: 'smooth'
                 });
             });
+        });
+
+        // Language Switch Logic
+        const langSwitchButton = document.getElementById('lang-switch-btn');
+        const langSwitchButtonTextSpan = langSwitchButton.querySelector('span:last-child'); 
+        const translatableElements = document.querySelectorAll('[data-lang-es], [data-lang-placeholder-es]'); 
+        let currentLang = 'es'; // Default language
+
+        langSwitchButton.addEventListener('click', () => {
+            
+            currentLang = currentLang === 'es' ? 'en' : 'es';
+
+            
+            langSwitchButtonTextSpan.textContent = currentLang === 'es' ? 'English' : 'Español';
+
+            // Update page content
+            translatableElements.forEach(el => {
+                const text = el.getAttribute(`data-lang-${currentLang}`);
+                const placeholder = el.getAttribute(`data-lang-placeholder-${currentLang}`);
+
+                
+                if (text !== null && !(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA')) {
+                     el.textContent = text;
+                }
+
+                
+                if (placeholder !== null && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA')) {
+                    el.placeholder = placeholder;
+                }
+            });
+        });
+
+        // Initialize placeholders on page load
+        translatableElements.forEach(el => {
+            if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+                const initialPlaceholder = el.getAttribute(`data-lang-placeholder-${currentLang}`);
+                if (initialPlaceholder !== null) {
+                    el.placeholder = initialPlaceholder;
+                }
+            }
         });
     </script>
 </body>
