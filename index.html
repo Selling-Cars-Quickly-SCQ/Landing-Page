@@ -331,6 +331,145 @@
             font-size: 0.9rem;
             border-top: 1px solid #123325;
         }
+
+        /* Pricing Section */
+        .pricing {
+            padding: 80px 0;
+            background-color: #f8ecd6;
+        }
+
+        .pricing .section-title {
+            color: #002d18;
+            margin-bottom: 60px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .pricing-card {
+            background-color: #ffffff;
+            border-radius: 15px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+            border: 2px solid transparent;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card.featured {
+            border-color: #fbb901;
+            transform: scale(1.05);
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.05) translateY(-10px);
+        }
+
+        .pricing-badge {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: #fbb901;
+            color: #002d18;
+            padding: 8px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        .pricing-header h3 {
+            font-size: 1.8rem;
+            color: #002d18;
+            margin-bottom: 20px;
+        }
+
+        .price {
+            margin-bottom: 10px;
+        }
+
+        .price .currency {
+            font-size: 1.2rem;
+            color: #666;
+            vertical-align: top;
+        }
+
+        .price .amount {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #002d18;
+        }
+
+        .price .period {
+            font-size: 1rem;
+            color: #666;
+        }
+
+        .savings {
+            background-color: #e8f5e8;
+            color: #2d5a2d;
+            padding: 5px 15px;
+            border-radius: 15px;
+            font-size: 0.9rem;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
+
+        .pricing-features {
+            margin: 30px 0;
+        }
+
+        .pricing-features ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .pricing-features li {
+            padding: 10px 0;
+            color: #555;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        .pricing-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pricing-footer {
+            margin-top: 30px;
+        }
+
+        .pricing-footer .btn {
+            width: 100%;
+            padding: 15px;
+            font-size: 1.1rem;
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            .pricing-card.featured {
+                transform: none;
+            }
+            
+            .pricing-card.featured:hover {
+                transform: translateY(-10px);
+            }
+        }
     </style>
 </head>
 <body>
@@ -446,6 +585,83 @@
         </div>
     </section>
 
+    <!-- Sección Precios -->
+    <section class="pricing" id="precios">
+        <div class="container">
+            <h2 class="section-title" data-lang-es="Nuestros Planes" data-lang-en="Our Plans">Nuestros Planes</h2>
+            <div class="pricing-grid">
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 data-lang-es="Free" data-lang-en="Free">Free</h3>
+                        <div class="price">
+                            <span class="currency">S/.</span>
+                            <span class="amount">0</span>
+                            <span class="period" data-lang-es="/mes" data-lang-en="/month">/mes</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li data-lang-es="✓ Acceso a información básica" data-lang-en="✓ Access to basic information">✓ Acceso a información básica</li>
+                            <li data-lang-es="✓ Navegación por la plataforma" data-lang-en="✓ Platform navigation">✓ Navegación por la plataforma</li>
+                            <li data-lang-es="✓ Consulta de precios de referencia" data-lang-en="✓ Reference price consultation">✓ Consulta de precios de referencia</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="https://selling-cars-quickly-scq.github.io/certiweb-frontend/" class="btn btn-secondary" data-lang-es="Comenzar Gratis" data-lang-en="Start Free">Comenzar Gratis</a>
+                    </div>
+                </div>
+
+                <div class="pricing-card featured">
+                    <div class="pricing-badge" data-lang-es="Más Popular" data-lang-en="Most Popular">Más Popular</div>
+                    <div class="pricing-header">
+                        <h3 data-lang-es="Mensual" data-lang-en="Monthly">Mensual</h3>
+                        <div class="price">
+                            <span class="currency">S/.</span>
+                            <span class="amount">50</span>
+                            <span class="period" data-lang-es="/mes" data-lang-en="/month">/mes</span>
+                        </div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li data-lang-es="✓ Certificación completa del vehículo" data-lang-en="✓ Complete vehicle certification">✓ Certificación completa del vehículo</li>
+                            <li data-lang-es="✓ Informe detallado con fotos" data-lang-en="✓ Detailed report with photos">✓ Informe detallado con fotos</li>
+                            <li data-lang-es="✓ Diagnóstico mecánico profesional" data-lang-en="✓ Professional mechanical diagnosis">✓ Diagnóstico mecánico profesional</li>
+                            <li data-lang-es="✓ Precio sugerido de mercado" data-lang-en="✓ Suggested market price">✓ Precio sugerido de mercado</li>
+                            <li data-lang-es="✓ Soporte técnico" data-lang-en="✓ Technical support">✓ Soporte técnico</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="https://selling-cars-quickly-scq.github.io/certiweb-frontend/" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-lang-es="Elegir Plan" data-lang-en="Choose Plan">Elegir Plan</a>
+                    </div>
+                </div>
+
+                <div class="pricing-card">
+                    <div class="pricing-header">
+                        <h3 data-lang-es="Anual" data-lang-en="Annual">Anual</h3>
+                        <div class="price">
+                            <span class="currency">S/.</span>
+                            <span class="amount">250</span>
+                            <span class="period" data-lang-es="/año" data-lang-en="/year">/año</span>
+                        </div>
+                        <div class="savings" data-lang-es="Ahorra S/.350" data-lang-en="Save S/.350">Ahorra S/.350</div>
+                    </div>
+                    <div class="pricing-features">
+                        <ul>
+                            <li data-lang-es="✓ Todo lo del plan mensual" data-lang-en="✓ Everything in monthly plan">✓ Todo lo del plan mensual</li>
+                            <li data-lang-es="✓ Certificaciones ilimitadas" data-lang-en="✓ Unlimited certifications">✓ Certificaciones ilimitadas</li>
+                            <li data-lang-es="✓ Soporte prioritario 24/7" data-lang-en="✓ Priority 24/7 support">✓ Soporte prioritario 24/7</li>
+                            <li data-lang-es="✓ Reportes históricos" data-lang-en="✓ Historical reports">✓ Reportes históricos</li>
+                            <li data-lang-es="✓ Descuentos en servicios adicionales" data-lang-en="✓ Discounts on additional services">✓ Descuentos en servicios adicionales</li>
+                        </ul>
+                    </div>
+                    <div class="pricing-footer">
+                        <a href="https://selling-cars-quickly-scq.github.io/certiweb-frontend/" class="btn btn-primary" target="_blank" rel="noopener noreferrer" data-lang-es="Elegir Plan" data-lang-en="Choose Plan">Elegir Plan</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Sección Contacto -->
     <section class="contact" id="contacto">
         <div class="container">
@@ -516,6 +732,21 @@
                 }
 
                 
+                if (placeholder !== null && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA')) {
+                    el.placeholder = placeholder;
+                }
+            });
+
+            // Re-select translatable elements to include new pricing section
+            const updatedTranslatableElements = document.querySelectorAll('[data-lang-es], [data-lang-placeholder-es]');
+            updatedTranslatableElements.forEach(el => {
+                const text = el.getAttribute(`data-lang-${currentLang}`);
+                const placeholder = el.getAttribute(`data-lang-placeholder-${currentLang}`);
+
+                if (text !== null && !(el.tagName === 'INPUT' || el.tagName === 'TEXTAREA')) {
+                     el.textContent = text;
+                }
+
                 if (placeholder !== null && (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA')) {
                     el.placeholder = placeholder;
                 }
