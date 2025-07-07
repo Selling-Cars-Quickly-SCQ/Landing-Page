@@ -322,6 +322,232 @@
           }
         }
 
+        /* Demo Video Section */
+        .demo-video {
+            padding: 80px 0;
+            background-color: #ffffff;
+        }
+
+        .demo-video .section-title {
+            color: #002d18;
+            margin-bottom: 40px;
+        }
+
+        .video-container {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background-color: #f8f6ed;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        .video-description {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .video-container iframe {
+                height: 300px;
+            }
+            
+            .demo-video {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .video-container iframe {
+                height: 250px;
+            }
+        }
+
+        .testimonial-content {
+            margin-left: 60px;
+        }
+
+        .testimonial-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+            background-color: #c3ccc7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            color: #002d18;
+        }
+
+        .testimonial h4 {
+            margin-bottom: 10px;
+            color: #fbb901;
+        }
+
+        .testimonial p {
+            line-height: 1.6;
+        }
+
+       
+        .contact {
+            padding: 80px 0;
+            background-color: #002d18;
+            color: #ffffff;
+        }
+
+        .contact-form {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            background-color: #f8ecd6;
+            color: #002d18;
+        }
+
+        textarea.form-control {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .grid-container {
+          display: grid; 
+          grid-template-columns: 1fr 1fr;
+          gap: 20px; 
+          align-items: start; 
+        }
+
+        .container {
+          max-width: 1200px; 
+          margin: 0 auto; 
+          padding: 20px; 
+        }
+
+        
+        .section-title {
+          font-size: 1.8em; 
+          margin-bottom: 15px; 
+          color: #123325; 
+        }
+
+        .grid-column {
+            padding: 1rem;
+        }
+
+        .grid-column p {
+          color: #555; 
+          line-height: 1.6; 
+        }
+
+        
+        .feature {
+          display: flex; 
+          align-items: flex-start; 
+          margin-bottom: 10px; 
+        }
+
+        .feature-icon {
+          margin-right: 10px;
+          font-weight: bold; 
+          min-width: 20px; 
+          text-align: center;
+        }
+
+       
+        .about-content {
+          display: flex;
+          flex-direction: column; 
+          align-items: center;
+          text-align: center; 
+          gap: 1rem
+        }
+
+        .about-icon img {
+            width: 150px;
+            height: auto;
+            object-fit: cover;
+            border-radius: 8px;
+        }
+        
+        @media (max-width: 768px) {
+          .grid-container {
+            grid-template-columns: 1fr; 
+            gap: 30px; 
+          }
+        }
+
+                /* Team Video Section */
+        .team-video {
+            padding: 80px 0;
+            background-color: #f8ecd6;
+        }
+
+        .team-video .section-title {
+            color: #002d18;
+            margin-bottom: 40px;
+        }
+
+        .team-video .video-container {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
+        }
+
+        .team-video .video-container iframe {
+            width: 100%;
+            height: 450px;
+            border: none;
+        }
+
+        .team-video .video-description {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #555;
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.6;
+        }
+
+        @media (max-width: 768px) {
+            .team-video .video-container iframe {
+                height: 300px;
+            }
+            
+            .team-video {
+                padding: 60px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .team-video .video-container iframe {
+                height: 250px;
+            }
+        }
+
         /* Footer */
         footer {
             background-color: #002d18;
@@ -509,6 +735,27 @@
         </div>
     </section>
 
+    <!-- Sección Video Demostrativo -->
+    <section class="demo-video" id="demo">
+        <div class="container">
+            <h2 class="section-title" data-lang-es="Conoce más sobre CertiWeb" data-lang-en="Learn more about CertiWeb">Conoce más sobre CertiWeb</h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/QYdgQ-9_wjg"
+                    width="100%" 
+                    height="400" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    allowfullscreen 
+                    title="CertiWeb Demo Video"
+                    data-lang-title-es="Video Demostrativo de CertiWeb"
+                    data-lang-title-en="CertiWeb Demo Video">
+                </iframe>
+            </div>
+            <p class="video-description" data-lang-es="Descubre cómo CertiWeb puede ayudarte a certificar tu vehículo y venderlo con mayor confianza." data-lang-en="Discover how CertiWeb can help you certify your vehicle and sell it with greater confidence.">Descubre cómo CertiWeb puede ayudarte a certificar tu vehículo y venderlo con mayor confianza.</p>
+        </div>
+    </section>
+
     <section class="features-about-grid" id="features-about">
         <div class="container">
             <div class="grid-container">
@@ -659,6 +906,27 @@
                     </div>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Sección Video del Equipo -->
+    <section class="team-video" id="equipo">
+        <div class="container">
+            <h2 class="section-title" data-lang-es="Conoce a nuestro equipo" data-lang-en="Meet our team">Conoce a nuestro equipo</h2>
+            <div class="video-container">
+                <iframe 
+                    src="https://www.youtube.com/embed/PAaFAEsvDhY"
+                    width="100%" 
+                    height="400" 
+                    frameborder="0" 
+                    scrolling="no" 
+                    allowfullscreen 
+                    title="CertiWeb Team Video"
+                    data-lang-title-es="Video del Equipo CertiWeb"
+                    data-lang-title-en="CertiWeb Team Video">
+                </iframe>
+            </div>
+            <p class="video-description" data-lang-es="Descubre quiénes somos y cómo trabajamos para brindarte el mejor servicio de certificación vehicular." data-lang-en="Discover who we are and how we work to provide you with the best vehicle certification service.">Descubre quiénes somos y cómo trabajamos para brindarte el mejor servicio de certificación vehicular.</p>
         </div>
     </section>
 
